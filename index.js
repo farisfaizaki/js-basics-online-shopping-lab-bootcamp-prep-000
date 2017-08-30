@@ -23,14 +23,15 @@ function viewCart() {
   if(cart.length>0){
     string+="In your cart, you have "
     for(let i=0;i<cart.length;i++){
+      var key = Object.keys(cart)[i];
       if(i==0 && cart.length==1){
-        string+=`${Object.keys(cart)[i]} at ${cart[Object.keys(cart)[i]]}.`;
-      }else if(i==cart.length){
-        string+=`, and ${Object.keys(cart)[i]}  at ${cart[Object.keys(cart)[i]]}.`;
-      }else if(i==0){
-        string+=`${Object.keys(cart)[i]} at ${cart[Object.keys(cart)[i]]}`;
+        string+=`${key} at ${cart[key]}.`;
+      }else if(i!=0 && i==cart.length){
+        string+=`, and ${key}  at ${cart[key]}.`;
+      }else if(i==0 && cart.length!=1){
+        string+=`${key} at ${cart[key]}`;
       }else{
-        string+=`, ${Object.keys(cart)[i]} at ${cart[Object.keys(cart)[i]]}`;
+        string+=`, ${key} at ${cart[key]}`;
       }
     }
   }else{
