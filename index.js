@@ -53,11 +53,14 @@ function viewCart() {
        for (var item in cart[i]) {
          if(i==0 && cart.length==1){
            string+=`${item} at $${cart[i][item]}.`;
-         }else if(i!=0 && i==cart.length-1){
+         }else if(i!=0 && i==cart.length-1 && cart.length!=2){
            string+=`, and ${item} at $${cart[i][item]}.`;
          }else if(i==0 && cart.length!=1){
            string+=`${item} at $${cart[i][item]}`;
-         }else{
+         }else if(i!=0 && i==cart.length-1 && cart.length==2){
+           string+=` and ${item} at $${cart[i][item]}.`;
+         }
+         else{
            string+=`, ${item} at $${cart[i][item]}`;
          }
        }
