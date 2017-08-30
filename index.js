@@ -24,13 +24,13 @@ function viewCart() {
     string+="In your cart, you have "
     for(let i=0;i<cart.length;i++){
       if(i==0 && cart.length==1){
-        string+=`${Object.keys(cart)[i]} at ${cart[i][Object.keys(cart)[i]]}.`;
+        string+=`${Object.keys(cart)[i]} at ${cart[Object.keys(cart)[i]]}.`;
       }else if(i==cart.length){
-        string+=`, and ${Object.keys(cart)[i]}  at ${cart[i][Object.keys(cart)[i]]}.`;
+        string+=`, and ${Object.keys(cart)[i]}  at ${cart[Object.keys(cart)[i]]}.`;
       }else if(i==0){
-        string+=`${Object.keys(cart)[i]} at ${cart[i][Object.keys(cart)[i]]}`;
+        string+=`${Object.keys(cart)[i]} at ${cart[Object.keys(cart)[i]]}`;
       }else{
-        string+=`, ${Object.keys(cart)[i]} at ${cart[i][Object.keys(cart)[i]]}`;
+        string+=`, ${Object.keys(cart)[i]} at ${cart[Object.keys(cart)[i]]}`;
       }
     }
   }else{
