@@ -24,7 +24,7 @@ function viewCart() {
     string+="In your cart, you have ";
     console.log("ok");
     for(let i=0;i<cart.length;i++){
-      var key = Object.keys(cart)[i];
+      var keys = Object.keys(cart)[i];
       if(cart.hasOwnProperty(key)){
         if(i==0 && cart.length==1){
           string+=`${key} at $${cart[key]}.`;
