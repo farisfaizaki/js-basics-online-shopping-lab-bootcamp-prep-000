@@ -21,10 +21,11 @@ function viewCart() {
   // write your code here
   var string="";
   if(cart.length>0){
-    string+="In your cart, you have "
+    string+="In your cart, you have ";
+    console.log("ok");
     for(let i=0;i<cart.length;i++){
       var key = Object.keys(cart)[i];
-      console.log("ok")
+      
       if(i==0 && cart.length==1){
         string+=`${key} at $${cart[key]}.`;
       }else if(i!=0 && i==cart.length-1){
