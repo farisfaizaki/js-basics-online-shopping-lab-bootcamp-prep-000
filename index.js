@@ -48,12 +48,21 @@ function viewCart() {
      console.log("Your shopping cart is empty.")
    } else {
      var items = [];
+     var string ="In your cart, you have ";
      for (var i = 0; i < cart.length; i++) {
        for (var item in cart[i]) {
-         items.push(item + " at $" + cart[i][item])
+         if(i==0 && cart.length==1){
+           string+=`${item} at $${cart[i][item]}.`;
+         }else if(i!=0 && i==cart.length-1){
+           string+=`, and ${item}  at $${cart[i][item]}.`;
+         }else if(i==0 && cart.length!=1){
+           string+=`${item} at $${cart[i][item]}`;
+         }else{
+           string+=`, ${item} at $${cart[i][item]}`;
+         }
        }
      }
-     console.log("In your cart, you have " + items.join(", ") + ".");
+     console.log(string);
    }
  }
 
