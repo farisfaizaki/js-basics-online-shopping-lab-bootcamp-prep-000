@@ -54,7 +54,7 @@ function viewCart() {
          if(i==0 && cart.length==1){
            string+=`${item} at $${cart[i][item]}.`;
          }else if(i!=0 && i==cart.length-1){
-           string+=`, and ${item}  at $${cart[i][item]}.`;
+           string+=`, and ${item} at $${cart[i][item]}.`;
          }else if(i==0 && cart.length!=1){
            string+=`${item} at $${cart[i][item]}`;
          }else{
