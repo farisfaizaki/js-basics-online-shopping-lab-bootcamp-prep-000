@@ -17,7 +17,7 @@ function addToCart(item) {
  return cart;
 }
 
-function viewCart() {
+function viewaCart() {
   // write your code here
   var string="";
   if(cart.length===0){
@@ -25,7 +25,7 @@ function viewCart() {
   }else{
     string+="In your cart, you have ";
     var keys = Object.keys(cart);
-    for(let i=0;i<cart.length;i++){
+    for(var i=0;i<cart.length;i++){
       var key = keys[i];
       if(cart.hasOwnProperty(key)){
         if(i==0 && cart.length==1){
@@ -42,6 +42,20 @@ function viewCart() {
   }
   console.log(string);
 }
+
+function viewCart() {
+   if (cart.length === 0) {
+     console.log("Your shopping cart is empty.")
+   } else {
+     var items = [];
+     for (var i = 0; i < cart.length; i++) {
+       for (var item in cart[i]) {
+         items.push(item + " at $" + cart[i][item])
+       }
+     }
+     console.log("In your cart, you have " + items.join(", ") + ".");
+   }
+ }
 
 function total() {
   // write your code here
