@@ -27,13 +27,21 @@ function viewCart() {
       var key = Object.keys(cart)[i];
 
       if(i==0 && cart.length==1){
-        string+=`${key} at $${cart[key]}.`;
+        if(cart.hasOwnProperty(key)){
+          string+=`${key} at $${cart[key]}.`;
+        }
       }else if(i!=0 && i==cart.length-1){
-        string+=`, and ${key}  at $${cart[key]}.`;
+        if(cart.hasOwnProperty(key)){
+          string+=`, and ${key}  at $${cart[key]}.`;
+        }
       }else if(i==0 && cart.length!=1){
-        string+=`${key} at $${cart[key]}`;
+        if(cart.hasOwnProperty(key)){
+          string+=`${key} at $${cart[key]}`;
+        }
       }else{
-        string+=`, ${key} at $${cart[key]}`;
+        if(cart.hasOwnProperty(key)){
+          string+=`, ${key} at $${cart[key]}`;
+        }
       }
     }
   }else{
