@@ -25,7 +25,7 @@ function viewCart() {
     console.log("ok");
     for(let i=0;i<cart.length;i++){
       var key = Object.keys(cart)[i];
-      
+
       if(i==0 && cart.length==1){
         string+=`${key} at $${cart[key]}.`;
       }else if(i!=0 && i==cart.length-1){
