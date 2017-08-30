@@ -104,4 +104,4 @@ function placeOrder(cardNumber) {
      cart = [];
    }
  }
-}
+
